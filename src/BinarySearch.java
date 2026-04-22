@@ -15,33 +15,44 @@ public class BinarySearch {
 		for(int i = 0; i < 10000; i++) {
 			l2[i] = i;
 		}
-		
+		//30k size array
 		int[] l3 = new int[30000];
 		for(int i = 0; i < 30000; i++) {
 			l3[i] = i;
 		}
-
+		
+		//50k size array
 		int[] l4 = new int[50000];
 		for(int i = 0; i < 50000; i++) {
 			l4[i] = i;
 		}
-
+		//70k size array
 		int[] l5 = new int[70000];
 		for(int i = 0; i < 70000; i++) {
 			l5[i] = i;
 		}
 		
+		//100k size array
 		int[] l6 = new int[100000];
 		for(int i = 0; i < 100000; i++) {
 			l6[i] = i;
 		}
 		
-		int num = 100;
-		int n = l1.length;
-		int indexOfNum = RecursiveSearch(l1, 0, n-1, num);
-		System.out.println("Number to be found: " + num);
-		System.out.println("Number is found at index " + indexOfNum);
-		
+		System.out.println("Recursive binary search of 5000: " + getAvgTime("Recursive", l1, 1) + " nanoseconds.");
+        System.out.println("Recursive binary search of 10000: " + getAvgTime("Recursive", l2, 1) + " nanoseconds.");
+        System.out.println("Recursive binary search of 30000: " + getAvgTime("Recursive", l3, 1) + " nanoseconds.");
+        System.out.println("Recursive binary search of 50000: " + getAvgTime("Recursive", l4, 1) + " nanoseconds.");
+        System.out.println("Recursive binary search of 70000: " + getAvgTime("Recursive", l5, 1) + " nanoseconds.");
+        System.out.println("Recursive binary search of 100000: " + getAvgTime("Recursive", l6, 1) + " nanoseconds.");
+
+        System.out.println();
+        
+        System.out.println("Iterative binary search of 5000: " + getAvgTime("Iterative", l1, 1) + " nanoseconds.");
+        System.out.println("Iterative binary search of 10000: " + getAvgTime("Iterative", l2, 1) + " nanoseconds.");
+        System.out.println("Iterative binary search of 30000: " + getAvgTime("Iterative", l3, 1) + " nanoseconds.");
+        System.out.println("Iterative binary search of 50000: " + getAvgTime("Iterative", l4, 1) + " nanoseconds.");
+        System.out.println("Iterative binary search of 70000: " + getAvgTime("Iterative", l5, 1) + " nanoseconds.");
+        System.out.println("Iterative binary search of 100000: " + getAvgTime("Iterative", l6, 1) + " nanoseconds.");
 	}
 	
 	static int RecursiveSearch(int[] list, int left, int right, int a) {
@@ -80,6 +91,30 @@ public class BinarySearch {
 		}
 		return -1;
 	}
+	public static long getAvgTime(String type, int[] list, int num) {
+        long time = 0;
+
+        try {
+            for (int i = 0; i < 10; i++) {
+                long start = System.nanoTime();
+
+                if (type.equals("Recursive")) {
+                    IterativeSearch(list, 0, list.length-1, num);
+                } else {
+                    RecursiveSearch(list, 0, list.length-1, num);
+                }
+
+                long end = System.nanoTime();
+                time += (end - start);
+            }
+        } catch (StackOverflowError e) {
+            System.out.println("StackOverflowError at " + num);
+            return -1;
+        }
+
+        return time / 10;
+    }
+	
 	
 	
 	
