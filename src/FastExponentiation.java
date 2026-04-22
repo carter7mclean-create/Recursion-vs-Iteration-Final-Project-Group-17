@@ -7,35 +7,25 @@ public class FastExponentiation {
 		Scanner scan = new Scanner(System.in);
 		long x = 2;
 		System.out.println("The base vaue is: " + x);
-		System.out.print("Enter the value of the exponenet: ");
-		long n = scan.nextLong();
-		System.out.println("Enter the number of test runs: ");
+//		System.out.print("Enter the value of the exponent: ");
+//		long n = scan.nextLong();
+		System.out.print("Enter the number of test runs: ");
 		long numRuns = scan.nextLong();
 		scan.close();
 		
-		long recursion = 0;
-		long iterative = 0;
-		try
-		{
-			recursion = averageRecursion(x, n, numRuns);
-		}
-		catch (StackOverflowError e)
-		{
-			System.out.println("Recursion StackOverflowError");
-		}
-		
-		try
-		{
-			iterative = averageIterative(x, n, numRuns);
-		}
-		catch (StackOverflowError e)
-		{
-			System.out.println("Iterative StackOverflowError");
-		}
-		System.out.println("\n\n");
-		System.out.println("Recursive average runtime: " + recursion);
-		System.out.println("Iterative average runtime: " + iterative);
-
+		System.out.println("Recursive fast exponentiaion of 5000: " + getAvgTime("Recursive", 5000, numRuns));
+        System.out.println("Recursive fast exponentiaion of 10000: " + getAvgTime("Recursive", 10000, numRuns));
+        System.out.println("Recursive fast exponentiaion of 30000: " + getAvgTime("Recursive", 30000, numRuns));
+        System.out.println("Recursive fast exponentiaion of 50000: " + getAvgTime("Recursive", 50000, numRuns));
+        System.out.println("Recursive fast exponentiaion of 70000: " + getAvgTime("Recursive", 70000, numRuns));
+        System.out.println("Recursive fast exponentiaion of 100000: " + getAvgTime("Recursive", 100000, numRuns));
+        System.out.println();
+        System.out.println("Iterative fast exponentiaion of 5000: " + getAvgTime("Iterative", 5000, numRuns));
+        System.out.println("Iterative fast exponentiaion of 10000: " + getAvgTime("Iterative", 10000, numRuns));
+        System.out.println("Iterative fast exponentiaion of 30000: " + getAvgTime("Iterative", 30000, numRuns));
+        System.out.println("Iterative fast exponentiaion of 50000: " + getAvgTime("Iterative", 50000, numRuns));
+        System.out.println("Iterative fast exponentiaion of 70000: " + getAvgTime("Iterative", 70000, numRuns));
+        System.out.println("Iterative fast exponentiaion of 100000: " + getAvgTime("Iterative", 100000, numRuns));
 	}
 	
 	public static long recursiveExponentiation(long x, long n) //a ^ n
@@ -69,35 +59,32 @@ public class FastExponentiation {
 		}
 		return result;
 	}
+	public static long getAvgTime(String type, int n, long numRuns) {
+        long time = 0;
+
+        try {
+            for (int i = 0; i < numRuns; i++) 
+            {
+                long start = System.nanoTime();
+
+                if (type.equals("Recursive")) 
+                {
+                    recursiveExponentiation(2, n);
+                } 
+                else 
+                {
+                    iterativeExponentiation(2, n);
+                }
+
+                long end = System.nanoTime();
+                time += (end - start);
+            }
+        } catch (StackOverflowError e) {
+            System.out.println("StackOverflowError at " + n);
+            return -1;
+        }
+
+        return time / numRuns;
+    }
 	
-	public static long averageRecursion(long x, long n, long numRuns)
-	{
-		long totalTime = 0;
-		for(int i = 1; i <= numRuns; i++)
-		{
-			long start = System.nanoTime();
-			recursiveExponentiation(x, n);
-			long runTime = System.nanoTime() - start;
-			System.out.println("Recursion run #" + i + ": " + runTime);
-			totalTime += runTime;
-		}
-		System.out.println();
-		System.out.println("Recursion average runtime: " + totalTime/numRuns);
-		System.out.println();
-		return (totalTime/numRuns);
-	}
-	public static long averageIterative(long x, long n, long numRuns)
-	{
-		long totalTime = 0;
-		for(int i = 1; i <= numRuns; i++)
-		{
-			long start = System.nanoTime();
-			iterativeExponentiation(x, n);
-			long runTime = System.nanoTime() - start;
-			System.out.println("Iterative run #" + i + ": " + runTime);
-			totalTime += runTime;
-		}
-		System.out.println("Iterative average runtime: " + totalTime/numRuns);
-		return (totalTime/numRuns);
-	}
 }
