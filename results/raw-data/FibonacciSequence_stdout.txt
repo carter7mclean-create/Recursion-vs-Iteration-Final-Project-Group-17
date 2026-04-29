@@ -1,0 +1,15 @@
+Enter the number of test runs: Recursive fibonacci of 5000: 669612
+Recursive fibonacci of 10000: 867249
+Recursive fibonacci of 30000: 6960095
+StackOverflowError at 50000
+Recursive fibonacci of 50000: -1
+StackOverflowError at 70000
+Recursive fibonacci of 70000: -1
+StackOverflowError at 100000
+Recursive fibonacci of 100000: -1
+Iterative fibonacci of 5000: 205545
+Iterative fibonacci of 10000: 589104
+Iterative fibonacci of 30000: 5801487
+Iterative fibonacci of 50000: 15033187
+Iterative fibonacci of 70000: 30493041
+Iterative fibonacci of 100000: 65255916

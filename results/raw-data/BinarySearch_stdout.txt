@@ -1,0 +1,13 @@
+Enter the number of test runs: Recursive binary search of 5000: 558 nanoseconds.
+Recursive binary search of 10000: 429 nanoseconds.
+Recursive binary search of 30000: 533 nanoseconds.
+Recursive binary search of 50000: 1041 nanoseconds.
+Recursive binary search of 70000: 558 nanoseconds.
+Recursive binary search of 100000: 566 nanoseconds.
+
+Iterative binary search of 5000: 337 nanoseconds.
+Iterative binary search of 10000: 258 nanoseconds.
+Iterative binary search of 30000: 283 nanoseconds.
+Iterative binary search of 50000: 274 nanoseconds.
+Iterative binary search of 70000: 270 nanoseconds.
+Iterative binary search of 100000: 287 nanoseconds.

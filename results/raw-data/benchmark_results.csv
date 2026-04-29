@@ -1,0 +1,49 @@
+algorithm_class,algorithm_label,method,input_size,avg_time_ns,status,num_runs
+FibonacciSequence,Fibonacci Sequence,Iterative,5000,205545,ok,10
+FibonacciSequence,Fibonacci Sequence,Iterative,10000,589104,ok,10
+FibonacciSequence,Fibonacci Sequence,Iterative,30000,5801487,ok,10
+FibonacciSequence,Fibonacci Sequence,Iterative,50000,15033187,ok,10
+FibonacciSequence,Fibonacci Sequence,Iterative,70000,30493041,ok,10
+FibonacciSequence,Fibonacci Sequence,Iterative,100000,65255916,ok,10
+FibonacciSequence,Fibonacci Sequence,Recursive,5000,669612,ok,10
+FibonacciSequence,Fibonacci Sequence,Recursive,10000,867249,ok,10
+FibonacciSequence,Fibonacci Sequence,Recursive,30000,6960095,ok,10
+FibonacciSequence,Fibonacci Sequence,Recursive,50000,-1,stack_overflow,10
+FibonacciSequence,Fibonacci Sequence,Recursive,70000,-1,stack_overflow,10
+FibonacciSequence,Fibonacci Sequence,Recursive,100000,-1,stack_overflow,10
+Factorial,Factorial,Iterative,5000,2494704,ok,10
+Factorial,Factorial,Iterative,10000,11067041,ok,10
+Factorial,Factorial,Iterative,30000,108867545,ok,10
+Factorial,Factorial,Iterative,50000,303711866,ok,10
+Factorial,Factorial,Iterative,70000,611451454,ok,10
+Factorial,Factorial,Iterative,100000,1287520320,ok,10
+Factorial,Factorial,Recursive,5000,4242824,ok,10
+Factorial,Factorial,Recursive,10000,12837412,ok,10
+Factorial,Factorial,Recursive,30000,117898349,ok,10
+Factorial,Factorial,Recursive,50000,-1,stack_overflow,10
+Factorial,Factorial,Recursive,70000,-1,stack_overflow,10
+Factorial,Factorial,Recursive,100000,-1,stack_overflow,10
+BinarySearch,Binary Search,Iterative,5000,337,ok,10
+BinarySearch,Binary Search,Iterative,10000,258,ok,10
+BinarySearch,Binary Search,Iterative,30000,283,ok,10
+BinarySearch,Binary Search,Iterative,50000,274,ok,10
+BinarySearch,Binary Search,Iterative,70000,270,ok,10
+BinarySearch,Binary Search,Iterative,100000,287,ok,10
+BinarySearch,Binary Search,Recursive,5000,558,ok,10
+BinarySearch,Binary Search,Recursive,10000,429,ok,10
+BinarySearch,Binary Search,Recursive,30000,533,ok,10
+BinarySearch,Binary Search,Recursive,50000,1041,ok,10
+BinarySearch,Binary Search,Recursive,70000,558,ok,10
+BinarySearch,Binary Search,Recursive,100000,566,ok,10
+FastExponentiation,Fast Exponentiation,Iterative,5000,16546,ok,10
+FastExponentiation,Fast Exponentiation,Iterative,10000,53295,ok,10
+FastExponentiation,Fast Exponentiation,Iterative,30000,144387,ok,10
+FastExponentiation,Fast Exponentiation,Iterative,50000,317762,ok,10
+FastExponentiation,Fast Exponentiation,Iterative,70000,686079,ok,10
+FastExponentiation,Fast Exponentiation,Iterative,100000,360804,ok,10
+FastExponentiation,Fast Exponentiation,Recursive,5000,47045,ok,10
+FastExponentiation,Fast Exponentiation,Recursive,10000,98195,ok,10
+FastExponentiation,Fast Exponentiation,Recursive,30000,139829,ok,10
+FastExponentiation,Fast Exponentiation,Recursive,50000,205858,ok,10
+FastExponentiation,Fast Exponentiation,Recursive,70000,227691,ok,10
+FastExponentiation,Fast Exponentiation,Recursive,100000,263820,ok,10

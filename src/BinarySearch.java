@@ -2,6 +2,7 @@
 import java.util.*;
 
 public class BinarySearch {
+	private static volatile int lastResult = -1;
 	
 	public static void main(String[] args) {
 		//5k size array
@@ -60,36 +61,35 @@ public class BinarySearch {
 	}
 	
 	static int RecursiveSearch(int[] list, int left, int right, int a) {
-		if(right >= 1) {
-			int mid = (left + right)/2;
-			if(list[mid] == a) {
-				return mid;
-			}
-			else if(a > mid) {
-				left = mid + 1;
-				return RecursiveSearch(list, left, right, a);
-			}
-			else if(a < mid) {
-				right = mid - 1;
-				return RecursiveSearch(list, left, right, a);
-			}
+		if (left > right) {
+			return -1;
 		}
-		return -1;
+		
+		int mid = left + (right - left) / 2;
+		if (list[mid] == a) {
+			return mid;
+		}
+		else if (a > list[mid]) {
+			return RecursiveSearch(list, mid + 1, right, a);
+		}
+		else {
+			return RecursiveSearch(list, left, mid - 1, a);
+		}
 	}
 	
 	static int IterativeSearch(int[] list, int left, int right, int num) {
 		
-		while(left <= right) {
-			int mid = (left + right)/2;
+		while (left <= right) {
+			int mid = left + (right - left) / 2;
 			
-			if(list[mid] == num) {
+			if (list[mid] == num) {
 				return mid;
 			}
 			
-			else if(num < mid) {
+			else if (num < list[mid]) {
 				right = mid - 1;
 			}
-			else if(num > mid) {
+			else {
 				left = mid + 1;
 			}
 		}
@@ -102,10 +102,10 @@ public class BinarySearch {
             for (int i = 0; i < numRuns; i++) {
                 long start = System.nanoTime();
 
-                if (type.equals("Recursive")) {
-                    IterativeSearch(list, 0, list.length-1, num);
+                if ("Recursive".equals(type)) {
+                    lastResult = RecursiveSearch(list, 0, list.length - 1, num);
                 } else {
-                    RecursiveSearch(list, 0, list.length-1, num);
+                    lastResult = IterativeSearch(list, 0, list.length - 1, num);
                 }
 
                 long end = System.nanoTime();

@@ -1,0 +1,15 @@
+Enter the number of test runs: Recursive factorial of 5000: 4242824
+Recursive factorial of 10000: 12837412
+Recursive factorial of 30000: 117898349
+StackOverflowError at 50000
+Recursive factorial of 50000: -1
+StackOverflowError at 70000
+Recursive factorial of 70000: -1
+StackOverflowError at 100000
+Recursive factorial of 100000: -1
+Iterative factorial of 5000: 2494704
+Iterative factorial of 10000: 11067041
+Iterative factorial of 30000: 108867545
+Iterative factorial of 50000: 303711866
+Iterative factorial of 70000: 611451454
+Iterative factorial of 100000: 1287520320

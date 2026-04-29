@@ -2,8 +2,12 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class FibonacciSequence {
+    private static volatile BigInteger lastResult = BigInteger.ZERO;
 
     public static BigInteger recursiveFibonacci(int num) {
+        if (num < 0) {
+            throw new IllegalArgumentException("Fibonacci is undefined for negative input.");
+        }
         return fibHelper(num, BigInteger.ZERO, BigInteger.ONE);
     }
 
@@ -14,6 +18,9 @@ public class FibonacciSequence {
     }
 
     public static BigInteger iterativeFibonacci(int num) {
+        if (num < 0) {
+            throw new IllegalArgumentException("Fibonacci is undefined for negative input.");
+        }
         if (num == 0) return BigInteger.ZERO;
         if (num == 1) return BigInteger.ONE;
 
@@ -35,10 +42,10 @@ public class FibonacciSequence {
             for (int i = 0; i < numRuns; i++) {
                 long start = System.nanoTime();
 
-                if (type.equals("Recursive")) {
-                    recursiveFibonacci(num);
+                if ("Recursive".equals(type)) {
+                    lastResult = recursiveFibonacci(num);
                 } else {
-                    iterativeFibonacci(num);
+                    lastResult = iterativeFibonacci(num);
                 }
 
                 long end = System.nanoTime();

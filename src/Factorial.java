@@ -1,18 +1,26 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Factorial {
+	private static volatile BigInteger lastResult = BigInteger.ONE;
 
-	public static long recursiveFactorial(int num) {
-		if(num == 0)
-			return 1;
+	public static BigInteger recursiveFactorial(int num) {
+		if (num < 0) {
+			throw new IllegalArgumentException("Factorial is undefined for negative input.");
+		}
+		if (num == 0 || num == 1)
+			return BigInteger.ONE;
 		else
-			return num * recursiveFactorial(num-1);
+			return BigInteger.valueOf(num).multiply(recursiveFactorial(num - 1));
 	}
 	
-	public static long iterativeFactorial(int num) {
-		int count = num;
-		for(int i = 1; i < num; i++) {
-			count *= i;
+	public static BigInteger iterativeFactorial(int num) {
+		if (num < 0) {
+			throw new IllegalArgumentException("Factorial is undefined for negative input.");
+		}
+		BigInteger count = BigInteger.ONE;
+		for (int i = 2; i <= num; i++) {
+			count = count.multiply(BigInteger.valueOf(i));
 		}
 		return count;
 	}
@@ -21,20 +29,18 @@ public class Factorial {
 		long time = 0;
 		try {
 			for(int i = 0; i < numRuns; i++) {
-				if(type.equals("Recursive")) {
-					long start = System.nanoTime();
-					recursiveFactorial(num);
-					long end = System.nanoTime() - start;
-					time += end;
+				long start = System.nanoTime();
+				if ("Recursive".equals(type)) {
+					lastResult = recursiveFactorial(num);
 				} else {
-					long start = System.nanoTime();
-					iterativeFactorial(num);
-					long end = System.nanoTime() - start;
-					time += end;
+					lastResult = iterativeFactorial(num);
 				}
+				long end = System.nanoTime();
+				time += (end - start);
 			}
 		} catch(StackOverflowError e) {
-			System.out.println("StackOverflowError at " + num);;
+			System.out.println("StackOverflowError at " + num);
+			return -1;
 		}
 		return time / numRuns;
 	}

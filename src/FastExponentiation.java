@@ -1,14 +1,16 @@
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class FastExponentiation {
+	private static volatile BigInteger lastResult = BigInteger.ONE;
 
 	public static void main(String[] args) 
 	{
 		Scanner scan = new Scanner(System.in);
-		long x = 2;
+		BigInteger x = BigInteger.valueOf(2);
 		System.out.println("The base vaue is: " + x);
-//		System.out.print("Enter the value of the exponent: ");
-//		long n = scan.nextLong();
+	//		System.out.print("Enter the value of the exponent: ");
+	//		long n = scan.nextLong();
 		System.out.print("Enter the number of test runs: ");
 		long numRuns = scan.nextLong();
 		scan.close();
@@ -25,36 +27,41 @@ public class FastExponentiation {
         System.out.println("Iterative fast exponentiaion of 30000: " + getAvgTime("Iterative", 30000, numRuns));
         System.out.println("Iterative fast exponentiaion of 50000: " + getAvgTime("Iterative", 50000, numRuns));
         System.out.println("Iterative fast exponentiaion of 70000: " + getAvgTime("Iterative", 70000, numRuns));
-        System.out.println("Iterative fast exponentiaion of 100000: " + getAvgTime("Iterative", 100000, numRuns));
-	}
+	        System.out.println("Iterative fast exponentiaion of 100000: " + getAvgTime("Iterative", 100000, numRuns));
+		}
 	
-	public static long recursiveExponentiation(long x, long n) //a ^ n
+	public static BigInteger recursiveExponentiation(BigInteger x, long n) //a ^ n
 	{
+		if (n < 0) {
+			throw new IllegalArgumentException("Exponent must be non-negative.");
+		}
 		if (n == 0)
 		{
-			return 1;
+			return BigInteger.ONE;
 		}
+		
+		BigInteger half = recursiveExponentiation(x, n / 2);
+		BigInteger squared = half.multiply(half);
 		if (n % 2 == 0)
 		{
-			long half = recursiveExponentiation(x, n/2);
-			return half * half;
+			return squared;
 		}
-		else
-		{
-			return x * recursiveExponentiation(x, n-1);
-		}
+		return squared.multiply(x);
 	}
 	
-	public static long iterativeExponentiation(long x, long n)
+	public static BigInteger iterativeExponentiation(BigInteger x, long n)
 	{
-		long result = 1;
+		if (n < 0) {
+			throw new IllegalArgumentException("Exponent must be non-negative.");
+		}
+		BigInteger result = BigInteger.ONE;
 		while (n > 0)
 		{
 			if (n % 2 != 0)
 			{
-				result *= x;
+				result = result.multiply(x);
 			}
-			x *= x;
+			x = x.multiply(x);
 			n /= 2;
 		}
 		return result;
@@ -62,19 +69,19 @@ public class FastExponentiation {
 	public static long getAvgTime(String type, int n, long numRuns) {
         long time = 0;
 
-        try {
-            for (int i = 0; i < numRuns; i++) 
-            {
-                long start = System.nanoTime();
+	        try {
+	            for (int i = 0; i < numRuns; i++) 
+	            {
+	                long start = System.nanoTime();
 
-                if (type.equals("Recursive")) 
-                {
-                    recursiveExponentiation(2, n);
-                } 
-                else 
-                {
-                    iterativeExponentiation(2, n);
-                }
+	                if ("Recursive".equals(type)) 
+	                {
+	                    lastResult = recursiveExponentiation(BigInteger.valueOf(2), n);
+	                } 
+	                else 
+	                {
+	                    lastResult = iterativeExponentiation(BigInteger.valueOf(2), n);
+	                }
 
                 long end = System.nanoTime();
                 time += (end - start);

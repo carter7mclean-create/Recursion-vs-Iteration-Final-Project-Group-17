@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="60" y="44" font-size="26" font-weight="700" fill="#111827">Recursive-to-Iterative Time Ratio</text><text x="60" y="72" font-size="15" fill="#4b5563">Values above 1.0 mean recursion was slower. Each bar uses the largest input size where both methods completed.</text>
+<line x1="90" y1="570" x2="1150" y2="570" stroke="#374151" stroke-width="1.5"/>
+<line x1="90" y1="110" x2="90" y2="570" stroke="#374151" stroke-width="1.5"/>
+<line x1="90" y1="476.69964664310953" x2="1150" y2="476.69964664310953" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78" y="481.69964664310953" text-anchor="end" font-size="12" fill="#6b7280">0.5x</text>
+<line x1="90" y1="383.39929328621906" x2="1150" y2="383.39929328621906" stroke="#d1d5db" stroke-width="2"/>
+<text x="78" y="388.39929328621906" text-anchor="end" font-size="12" fill="#6b7280">1.0x</text>
+<line x1="90" y1="290.0989399293286" x2="1150" y2="290.0989399293286" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78" y="295.0989399293286" text-anchor="end" font-size="12" fill="#6b7280">1.5x</text>
+<line x1="90" y1="196.79858657243813" x2="1150" y2="196.79858657243813" stroke="#e5e7eb" stroke-width="1"/>
+<text x="78" y="201.79858657243813" text-anchor="end" font-size="12" fill="#6b7280">2.0x</text>
+<rect x="149.625" y="346.13349029394476" width="145.75" height="223.8665097060552" rx="12" fill="#1d4ed8"/>
+<text x="222.5" y="336.13349029394476" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">1.20x</text>
+<text x="222.5" y="598" text-anchor="middle" font-size="13" fill="#111827">Fibonacci Sequence</text>
+<text x="222.5" y="618" text-anchor="middle" font-size="12" fill="#6b7280">at 30k</text>
+<rect x="414.625" y="367.92035134265234" width="145.75" height="202.0796486573477" rx="12" fill="#1d4ed8"/>
+<text x="487.5" y="357.92035134265234" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">1.08x</text>
+<text x="487.5" y="598" text-anchor="middle" font-size="13" fill="#111827">Factorial</text>
+<text x="487.5" y="618" text-anchor="middle" font-size="12" fill="#6b7280">at 30k</text>
+<rect x="679.625" y="202.0" width="145.75" height="368.0" rx="12" fill="#1d4ed8"/>
+<text x="752.5" y="192.0" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">1.97x</text>
+<text x="752.5" y="598" text-anchor="middle" font-size="13" fill="#111827">Binary Search</text>
+<text x="752.5" y="618" text-anchor="middle" font-size="12" fill="#6b7280">at 100k</text>
+<rect x="944.625" y="433.55750367171737" width="145.75" height="136.44249632828263" rx="12" fill="#1d4ed8"/>
+<text x="1017.5" y="423.55750367171737" text-anchor="middle" font-size="13" font-weight="700" fill="#1e3a8a">0.73x</text>
+<text x="1017.5" y="598" text-anchor="middle" font-size="13" fill="#111827">Fast Exponentiation</text>
+<text x="1017.5" y="618" text-anchor="middle" font-size="12" fill="#6b7280">at 100k</text>
+<text x="620.0" y="646" text-anchor="middle" font-size="13" fill="#374151">Algorithm</text>
+<text x="28" y="340.0" text-anchor="middle" font-size="13" fill="#374151" transform="rotate(-90 28 340.0)">Recursive Time / Iterative Time</text>
+</svg>

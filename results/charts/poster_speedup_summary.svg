@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="780" viewBox="0 0 1500 780">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="70" y="58" font-size="26" font-weight="700" fill="#111827">How Much Slower or Faster Was Recursion?</text><text x="70" y="86" font-size="15" fill="#4b5563">Summary chart. Values are recursive time divided by iterative time at the largest input where both methods completed.</text>
+<rect x="1132" y="48" width="247" height="28" rx="14" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/><text x="1144" y="66" font-size="13" font-weight="700" fill="#1d4ed8">right of 1.0 = recursion slower</text>
+<rect x="1324" y="48" width="240" height="28" rx="14" fill="#ecfdf5" stroke="#86efac" stroke-width="1"/><text x="1336" y="66" font-size="13" font-weight="700" fill="#047857">left of 1.0 = recursion faster</text>
+<line x1="260.0" y1="142" x2="260.0" y2="690" stroke="#e2e8f0" stroke-width="1"/>
+<text x="260.0" y="720" text-anchor="middle" font-size="13" fill="#64748b">0.0x</text>
+<line x1="425.625" y1="142" x2="425.625" y2="690" stroke="#e2e8f0" stroke-width="1"/>
+<text x="425.625" y="720" text-anchor="middle" font-size="13" fill="#64748b">0.5x</text>
+<line x1="591.25" y1="142" x2="591.25" y2="690" stroke="#94a3b8" stroke-width="2.5"/>
+<text x="591.25" y="720" text-anchor="middle" font-size="13" fill="#64748b">1.0x</text>
+<line x1="756.875" y1="142" x2="756.875" y2="690" stroke="#e2e8f0" stroke-width="1"/>
+<text x="756.875" y="720" text-anchor="middle" font-size="13" fill="#64748b">1.5x</text>
+<line x1="922.5" y1="142" x2="922.5" y2="690" stroke="#e2e8f0" stroke-width="1"/>
+<text x="922.5" y="720" text-anchor="middle" font-size="13" fill="#64748b">2.0x</text>
+<line x1="1088.125" y1="142" x2="1088.125" y2="690" stroke="#e2e8f0" stroke-width="1"/>
+<text x="1088.125" y="720" text-anchor="middle" font-size="13" fill="#64748b">2.5x</text>
+<line x1="1253.75" y1="142" x2="1253.75" y2="690" stroke="#e2e8f0" stroke-width="1"/>
+<text x="1253.75" y="720" text-anchor="middle" font-size="13" fill="#64748b">3.0x</text>
+<text x="238" y="222.5" text-anchor="end" font-size="20" font-weight="700" fill="#0f172a">Fibonacci Sequence</text>
+<rect x="591.25" y="192.5" width="66.15353960114021" height="50" rx="16" fill="#ea580c"/>
+<circle cx="657.4035396011402" cy="217.5" r="8" fill="#ea580c" stroke="#ffffff" stroke-width="2"/>
+<text x="673.4035396011402" y="211.5" text-anchor="start" font-size="15" font-weight="700" fill="#111827">1.20x slower</text>
+<text x="673.4035396011402" y="231.5" text-anchor="start" font-size="13" fill="#64748b">iteration wins at 30k</text>
+<text x="238" y="357.5" text-anchor="end" font-size="20" font-weight="700" fill="#0f172a">Factorial</text>
+<rect x="591.25" y="327.5" width="27.477921220690632" height="50" rx="16" fill="#ea580c"/>
+<circle cx="618.7279212206906" cy="352.5" r="8" fill="#ea580c" stroke="#ffffff" stroke-width="2"/>
+<text x="634.7279212206906" y="346.5" text-anchor="start" font-size="15" font-weight="700" fill="#111827">1.08x slower</text>
+<text x="634.7279212206906" y="366.5" text-anchor="start" font-size="13" fill="#64748b">iteration wins at 30k</text>
+<text x="238" y="492.5" text-anchor="end" font-size="20" font-weight="700" fill="#0f172a">Binary Search</text>
+<rect x="591.25" y="462.5" width="322.016550522648" height="50" rx="16" fill="#ea580c"/>
+<circle cx="913.266550522648" cy="487.5" r="8" fill="#ea580c" stroke="#ffffff" stroke-width="2"/>
+<text x="929.266550522648" y="481.5" text-anchor="start" font-size="15" font-weight="700" fill="#111827">1.97x slower</text>
+<text x="929.266550522648" y="501.5" text-anchor="start" font-size="13" fill="#64748b">iteration wins at 100k</text>
+<text x="238" y="627.5" text-anchor="end" font-size="20" font-weight="700" fill="#0f172a">Fast Exponentiation</text>
+<rect x="502.2101057637942" y="597.5" width="89.03989423620578" height="50" rx="16" fill="#0f766e"/>
+<circle cx="502.2101057637942" cy="622.5" r="8" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<text x="486.2101057637942" y="616.5" text-anchor="end" font-size="15" font-weight="700" fill="#111827">1.37x faster</text>
+<text x="486.2101057637942" y="636.5" text-anchor="end" font-size="13" fill="#64748b">recursion edges out iteration at 100k</text>
+<line x1="591.25" y1="140" x2="591.25" y2="690" stroke="#475569" stroke-width="2.5"/>
+<text x="591.25" y="130" text-anchor="middle" font-size="13" font-weight="700" fill="#334155">1.0x parity</text>
+<text x="790.0" y="746" text-anchor="middle" font-size="14" fill="#334155">Recursive Runtime / Iterative Runtime</text>
+</svg>

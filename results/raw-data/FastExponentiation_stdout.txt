@@ -1,0 +1,14 @@
+The base vaue is: 2
+Enter the number of test runs: Recursive fast exponentiaion of 5000: 47045
+Recursive fast exponentiaion of 10000: 98195
+Recursive fast exponentiaion of 30000: 139829
+Recursive fast exponentiaion of 50000: 205858
+Recursive fast exponentiaion of 70000: 227691
+Recursive fast exponentiaion of 100000: 263820
+
+Iterative fast exponentiaion of 5000: 16546
+Iterative fast exponentiaion of 10000: 53295
+Iterative fast exponentiaion of 30000: 144387
+Iterative fast exponentiaion of 50000: 317762
+Iterative fast exponentiaion of 70000: 686079
+Iterative fast exponentiaion of 100000: 360804

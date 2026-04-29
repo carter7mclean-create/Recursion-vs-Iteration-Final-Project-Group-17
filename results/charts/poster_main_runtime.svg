@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="70" y="54" font-size="26" font-weight="700" fill="#111827">How Runtime Changes as Input Size Grows</text><text x="70" y="82" font-size="15" fill="#4b5563">Main poster figure. Lower is better. The y-axis uses a log scale so all four algorithms can be read on the same page.</text>
+<rect x="1314" y="42" width="106" height="28" rx="14" fill="#c2410c"/><text x="1326" y="60" font-size="13" font-weight="700" fill="#ffffff">Recursive</text>
+<rect x="1442" y="42" width="106" height="28" rx="14" fill="#0f766e"/><text x="1454" y="60" font-size="13" font-weight="700" fill="#ffffff">Iterative</text>
+<rect x="1314" y="78" width="153" height="28" rx="14" fill="#ffffff" stroke="#fca5a5" stroke-width="1"/><text x="1326" y="96" font-size="13" font-weight="700" fill="#991b1b">X = stack overflow</text>
+<rect x="70.0" y="132.0" width="707.0" height="407.0" rx="24" fill="#ffffff" stroke="#dbe4ee" stroke-width="1.5"/>
+<text x="92.0" y="162.0" font-size="22" font-weight="700" fill="#0f172a">Fibonacci Sequence</text>
+<rect x="92.0" y="174.0" width="204" height="28" rx="14" fill="#fff7ed" stroke="#fdba74" stroke-width="1"/><text x="104.0" y="192.0" font-size="13" font-weight="700" fill="#9a3412">Recursive overflow at 50k</text>
+<text x="755.0" y="192.0" text-anchor="end" font-size="13" fill="#475569">At 30k: recursion is 1.20x slower</text>
+<line x1="150.0" y1="476.1013956033856" x2="749.0" y2="476.1013956033856" stroke="#e2e8f0" stroke-width="1"/>
+<text x="136.0" y="481.1013956033856" text-anchor="end" font-size="12" fill="#64748b">100.0K</text>
+<line x1="150.0" y1="389.38661810053" x2="749.0" y2="389.38661810053" stroke="#e2e8f0" stroke-width="1"/>
+<text x="136.0" y="394.38661810053" text-anchor="end" font-size="12" fill="#64748b">1.0M</text>
+<line x1="150.0" y1="302.6718405976744" x2="749.0" y2="302.6718405976744" stroke="#e2e8f0" stroke-width="1"/>
+<text x="136.0" y="307.6718405976744" text-anchor="end" font-size="12" fill="#64748b">10.0M</text>
+<line x1="150.0" y1="215.9570630948188" x2="749.0" y2="215.9570630948188" stroke="#e2e8f0" stroke-width="1"/>
+<text x="136.0" y="220.9570630948188" text-anchor="end" font-size="12" fill="#64748b">100.0M</text>
+<line x1="150.0" y1="129.2422855919632" x2="749.0" y2="129.2422855919632" stroke="#e2e8f0" stroke-width="1"/>
+<text x="136.0" y="134.2422855919632" text-anchor="end" font-size="12" fill="#64748b">1.0B</text>
+<line x1="150.0" y1="206.0" x2="150.0" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="150.0" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">5k</text>
+<line x1="269.8" y1="206.0" x2="269.8" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="269.8" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">10k</text>
+<line x1="389.6" y1="206.0" x2="389.6" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="389.6" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">30k</text>
+<line x1="509.4" y1="206.0" x2="509.4" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="509.4" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">50k</text>
+<line x1="629.2" y1="206.0" x2="629.2" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="629.2" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">70k</text>
+<line x1="749.0" y1="206.0" x2="749.0" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="749.0" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">100k</text>
+<line x1="150.0" y1="475.0" x2="749.0" y2="475.0" stroke="#334155" stroke-width="1.6"/>
+<line x1="150.0" y1="206.0" x2="150.0" y2="475.0" stroke="#334155" stroke-width="1.6"/>
+<line x1="509.4" y1="206.0" x2="509.4" y2="475.0" stroke="#fb923c" stroke-width="2" stroke-dasharray="7 7" opacity="0.9"/>
+<text x="519.4" y="224.0" font-size="12" font-weight="700" fill="#9a3412">Overflow starts at 50k</text>
+<text x="449.5" y="525.0" text-anchor="middle" font-size="13" fill="#334155">Input Size</text>
+<text x="92.0" y="340.5" text-anchor="middle" font-size="13" fill="#334155" transform="rotate(-90 92.0 340.5)">Average Runtime (ns, log scale)</text>
+<line x1="150.0" y1="404.49031813321676" x2="269.8" y2="394.7504640493694" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<line x1="269.8" y1="394.7504640493694" x2="389.6" y2="316.3194313354225" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<circle cx="150.0" cy="404.49031813321676" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="269.8" cy="394.7504640493694" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="389.6" cy="316.3194313354225" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<line x1="502.4" y1="225.0" x2="516.4" y2="239.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/><line x1="502.4" y1="239.0" x2="516.4" y2="225.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+<line x1="622.2" y1="225.0" x2="636.2" y2="239.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/><line x1="622.2" y1="239.0" x2="636.2" y2="225.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+<line x1="742.0" y1="225.0" x2="756.0" y2="239.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/><line x1="742.0" y1="239.0" x2="756.0" y2="225.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+<line x1="150.0" y1="448.9677419354839" x2="269.8" y2="409.31437015215886" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="269.8" y1="409.31437015215886" x2="389.6" y2="323.1764755561802" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="389.6" y1="323.1764755561802" x2="509.4" y2="287.31889734498384" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="509.4" y1="287.31889734498384" x2="629.2" y2="260.6844813610441" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="629.2" y1="260.6844813610441" x2="749.0" y2="232.03225806451616" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<circle cx="150.0" cy="448.9677419354839" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="269.8" cy="409.31437015215886" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="389.6" cy="323.1764755561802" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="509.4" cy="287.31889734498384" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="629.2" cy="260.6844813610441" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="749.0" cy="232.03225806451616" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<rect x="823.0" y="132.0" width="707.0" height="407.0" rx="24" fill="#ffffff" stroke="#dbe4ee" stroke-width="1.5"/>
+<text x="845.0" y="162.0" font-size="22" font-weight="700" fill="#0f172a">Factorial</text>
+<rect x="845.0" y="174.0" width="204" height="28" rx="14" fill="#fff7ed" stroke="#fdba74" stroke-width="1"/><text x="857.0" y="192.0" font-size="13" font-weight="700" fill="#9a3412">Recursive overflow at 50k</text>
+<text x="1508.0" y="192.0" text-anchor="end" font-size="13" fill="#475569">At 30k: recursion is 1.08x slower</text>
+<line x1="903.0" y1="480.7170693740389" x2="1502.0" y2="480.7170693740389" stroke="#e2e8f0" stroke-width="1"/>
+<text x="889.0" y="485.7170693740389" text-anchor="end" font-size="12" fill="#64748b">1.0M</text>
+<line x1="903.0" y1="400.74778435710226" x2="1502.0" y2="400.74778435710226" stroke="#e2e8f0" stroke-width="1"/>
+<text x="889.0" y="405.74778435710226" text-anchor="end" font-size="12" fill="#64748b">10.0M</text>
+<line x1="903.0" y1="320.77849934016564" x2="1502.0" y2="320.77849934016564" stroke="#e2e8f0" stroke-width="1"/>
+<text x="889.0" y="325.77849934016564" text-anchor="end" font-size="12" fill="#64748b">100.0M</text>
+<line x1="903.0" y1="240.80921432322904" x2="1502.0" y2="240.80921432322904" stroke="#e2e8f0" stroke-width="1"/>
+<text x="889.0" y="245.80921432322904" text-anchor="end" font-size="12" fill="#64748b">1.0B</text>
+<line x1="903.0" y1="160.8399293062924" x2="1502.0" y2="160.8399293062924" stroke="#e2e8f0" stroke-width="1"/>
+<text x="889.0" y="165.8399293062924" text-anchor="end" font-size="12" fill="#64748b">10.0B</text>
+<line x1="903.0" y1="206.0" x2="903.0" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="903.0" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">5k</text>
+<line x1="1022.8" y1="206.0" x2="1022.8" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="1022.8" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">10k</text>
+<line x1="1142.6" y1="206.0" x2="1142.6" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="1142.6" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">30k</text>
+<line x1="1262.4" y1="206.0" x2="1262.4" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="1262.4" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">50k</text>
+<line x1="1382.2" y1="206.0" x2="1382.2" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="1382.2" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">70k</text>
+<line x1="1502.0" y1="206.0" x2="1502.0" y2="475.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="1502.0" y="501.0" text-anchor="middle" font-size="12" fill="#64748b">100k</text>
+<line x1="903.0" y1="475.0" x2="1502.0" y2="475.0" stroke="#334155" stroke-width="1.6"/>
+<line x1="903.0" y1="206.0" x2="903.0" y2="475.0" stroke="#334155" stroke-width="1.6"/>
+<line x1="1262.4" y1="206.0" x2="1262.4" y2="475.0" stroke="#fb923c" stroke-width="2" stroke-dasharray="7 7" opacity="0.9"/>
+<text x="1272.4" y="224.0" font-size="12" font-weight="700" fill="#9a3412">Overflow starts at 50k</text>
+<text x="1202.5" y="525.0" text-anchor="middle" font-size="13" fill="#334155">Input Size</text>
+<text x="845.0" y="340.5" text-anchor="middle" font-size="13" fill="#334155" transform="rotate(-90 845.0 340.5)">Average Runtime (ns, log scale)</text>
+<line x1="903.0" y1="430.52394644156817" x2="1022.8" y2="392.072917877657" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<line x1="1022.8" y1="392.072917877657" x2="1142.6" y2="315.06007782217443" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<circle cx="903.0" cy="430.52394644156817" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1022.8" cy="392.072917877657" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1142.6" cy="315.06007782217443" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<line x1="1255.4" y1="225.0" x2="1269.4" y2="239.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/><line x1="1255.4" y1="239.0" x2="1269.4" y2="225.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+<line x1="1375.2" y1="225.0" x2="1389.2" y2="239.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/><line x1="1375.2" y1="239.0" x2="1389.2" y2="225.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+<line x1="1495.0" y1="225.0" x2="1509.0" y2="239.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/><line x1="1495.0" y1="239.0" x2="1509.0" y2="225.0" stroke="#c2410c" stroke-width="3" stroke-linecap="round"/>
+<line x1="903.0" y1="448.9677419354839" x2="1022.8" y2="397.22661527425146" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="1022.8" y1="397.22661527425146" x2="1142.6" y2="317.82775831136166" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="1142.6" y1="317.82775831136166" x2="1262.4" y2="282.19637733673" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="1262.4" y1="282.19637733673" x2="1382.2" y2="257.8936938699826" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="1382.2" y1="257.8936938699826" x2="1502.0" y2="232.03225806451618" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<circle cx="903.0" cy="448.9677419354839" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1022.8" cy="397.22661527425146" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1142.6" cy="317.82775831136166" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1262.4" cy="282.19637733673" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1382.2" cy="257.8936938699826" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1502.0" cy="232.03225806451618" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<rect x="70.0" y="591.0" width="707.0" height="407.0" rx="24" fill="#ffffff" stroke="#dbe4ee" stroke-width="1.5"/>
+<text x="92.0" y="621.0" font-size="22" font-weight="700" fill="#0f172a">Binary Search</text>
+<rect x="92.0" y="633.0" width="218" height="28" rx="14" fill="#ecfdf5" stroke="#86efac" stroke-width="1"/><text x="104.0" y="651.0" font-size="13" font-weight="700" fill="#065f46">Recursive safe through 100k</text>
+<text x="755.0" y="651.0" text-anchor="end" font-size="13" fill="#475569">At 100k: recursion is 1.97x slower</text>
+<line x1="150.0" y1="1055.360193977825" x2="749.0" y2="1055.360193977825" stroke="#e2e8f0" stroke-width="1"/>
+<text x="136.0" y="1060.360193977825" text-anchor="end" font-size="12" fill="#64748b">100</text>
+<line x1="150.0" y1="697.2810012010153" x2="749.0" y2="697.2810012010153" stroke="#e2e8f0" stroke-width="1"/>
+<text x="136.0" y="702.2810012010153" text-anchor="end" font-size="12" fill="#64748b">1.0K</text>
+<line x1="150.0" y1="339.20180842420575" x2="749.0" y2="339.20180842420575" stroke="#e2e8f0" stroke-width="1"/>
+<text x="136.0" y="344.20180842420575" text-anchor="end" font-size="12" fill="#64748b">10.0K</text>
+<line x1="150.0" y1="665.0" x2="150.0" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="150.0" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">5k</text>
+<line x1="269.8" y1="665.0" x2="269.8" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="269.8" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">10k</text>
+<line x1="389.6" y1="665.0" x2="389.6" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="389.6" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">30k</text>
+<line x1="509.4" y1="665.0" x2="509.4" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="509.4" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">50k</text>
+<line x1="629.2" y1="665.0" x2="629.2" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="629.2" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">70k</text>
+<line x1="749.0" y1="665.0" x2="749.0" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="749.0" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">100k</text>
+<line x1="150.0" y1="934.0" x2="749.0" y2="934.0" stroke="#334155" stroke-width="1.6"/>
+<line x1="150.0" y1="665.0" x2="150.0" y2="934.0" stroke="#334155" stroke-width="1.6"/>
+<text x="449.5" y="984.0" text-anchor="middle" font-size="13" fill="#334155">Input Size</text>
+<text x="92.0" y="799.5" text-anchor="middle" font-size="13" fill="#334155" transform="rotate(-90 92.0 799.5)">Average Runtime (ns, log scale)</text>
+<line x1="150.0" y1="788.006022722697" x2="269.8" y2="828.890397326512" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<line x1="269.8" y1="828.890397326512" x2="389.6" y2="795.1343016006462" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<line x1="389.6" y1="795.1343016006462" x2="509.4" y2="691.0322580645161" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<line x1="509.4" y1="691.0322580645161" x2="629.2" y2="788.006022722697" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<line x1="629.2" y1="788.006022722697" x2="749.0" y2="785.7922939888101" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<circle cx="150.0" cy="788.006022722697" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="269.8" cy="828.890397326512" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="389.6" cy="795.1343016006462" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="509.4" cy="691.0322580645161" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="629.2" cy="788.006022722697" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="749.0" cy="785.7922939888101" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<line x1="150.0" y1="866.4269049889081" x2="269.8" y2="907.9677419354839" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="269.8" y1="907.9677419354839" x2="389.6" y2="893.584871837775" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="389.6" y1="893.584871837775" x2="509.4" y2="898.6108258055065" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="509.4" y1="898.6108258055065" x2="629.2" y2="900.8978055146088" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="629.2" y1="900.8978055146088" x2="749.0" y2="891.4022140082026" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<circle cx="150.0" cy="866.4269049889081" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="269.8" cy="907.9677419354839" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="389.6" cy="893.584871837775" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="509.4" cy="898.6108258055065" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="629.2" cy="900.8978055146088" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="749.0" cy="891.4022140082026" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<rect x="823.0" y="591.0" width="707.0" height="407.0" rx="24" fill="#ffffff" stroke="#dbe4ee" stroke-width="1.5"/>
+<text x="845.0" y="621.0" font-size="22" font-weight="700" fill="#0f172a">Fast Exponentiation</text>
+<rect x="845.0" y="633.0" width="218" height="28" rx="14" fill="#ecfdf5" stroke="#86efac" stroke-width="1"/><text x="857.0" y="651.0" font-size="13" font-weight="700" fill="#065f46">Recursive safe through 100k</text>
+<text x="1508.0" y="651.0" text-anchor="end" font-size="13" fill="#475569">At 100k: recursion is 1.37x faster</text>
+<line x1="903.0" y1="937.2950771717574" x2="1502.0" y2="937.2950771717574" stroke="#e2e8f0" stroke-width="1"/>
+<text x="889.0" y="942.2950771717574" text-anchor="end" font-size="12" fill="#64748b">10.0K</text>
+<line x1="903.0" y1="803.1923278593526" x2="1502.0" y2="803.1923278593526" stroke="#e2e8f0" stroke-width="1"/>
+<text x="889.0" y="808.1923278593526" text-anchor="end" font-size="12" fill="#64748b">100.0K</text>
+<line x1="903.0" y1="669.0895785469478" x2="1502.0" y2="669.0895785469478" stroke="#e2e8f0" stroke-width="1"/>
+<text x="889.0" y="674.0895785469478" text-anchor="end" font-size="12" fill="#64748b">1.0M</text>
+<line x1="903.0" y1="534.9868292345429" x2="1502.0" y2="534.9868292345429" stroke="#e2e8f0" stroke-width="1"/>
+<text x="889.0" y="539.9868292345429" text-anchor="end" font-size="12" fill="#64748b">10.0M</text>
+<line x1="903.0" y1="665.0" x2="903.0" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="903.0" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">5k</text>
+<line x1="1022.8" y1="665.0" x2="1022.8" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="1022.8" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">10k</text>
+<line x1="1142.6" y1="665.0" x2="1142.6" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="1142.6" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">30k</text>
+<line x1="1262.4" y1="665.0" x2="1262.4" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="1262.4" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">50k</text>
+<line x1="1382.2" y1="665.0" x2="1382.2" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="1382.2" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">70k</text>
+<line x1="1502.0" y1="665.0" x2="1502.0" y2="934.0" stroke="#f1f5f9" stroke-width="1"/>
+<text x="1502.0" y="960.0" text-anchor="middle" font-size="12" fill="#64748b">100k</text>
+<line x1="903.0" y1="934.0" x2="1502.0" y2="934.0" stroke="#334155" stroke-width="1.6"/>
+<line x1="903.0" y1="665.0" x2="903.0" y2="934.0" stroke="#334155" stroke-width="1.6"/>
+<text x="1202.5" y="984.0" text-anchor="middle" font-size="13" fill="#334155">Input Size</text>
+<text x="845.0" y="799.5" text-anchor="middle" font-size="13" fill="#334155" transform="rotate(-90 845.0 799.5)">Average Runtime (ns, log scale)</text>
+<line x1="903.0" y1="847.1091715104571" x2="1022.8" y2="804.2531644916638" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<line x1="1022.8" y1="804.2531644916638" x2="1142.6" y2="783.667336105164" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<line x1="1142.6" y1="783.667336105164" x2="1262.4" y2="761.1420306092675" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<line x1="1262.4" y1="761.1420306092675" x2="1382.2" y2="755.2712649763498" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<line x1="1382.2" y1="755.2712649763498" x2="1502.0" y2="746.6938048367736" stroke="#c2410c" stroke-width="4" stroke-linecap="round"/>
+<circle cx="903.0" cy="847.1091715104571" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1022.8" cy="804.2531644916638" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1142.6" cy="783.667336105164" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1262.4" cy="761.1420306092675" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1382.2" cy="755.2712649763498" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1502.0" cy="746.6938048367736" r="5" fill="#c2410c" stroke="#ffffff" stroke-width="2"/>
+<line x1="903.0" y1="907.9677419354839" x2="1022.8" y2="839.8444241199549" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="1022.8" y1="839.8444241199549" x2="1142.6" y2="781.799172003554" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="1142.6" y1="781.799172003554" x2="1262.4" y2="735.8590745504528" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="1262.4" y1="735.8590745504528" x2="1382.2" y2="691.0322580645161" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<line x1="1382.2" y1="691.0322580645161" x2="1502.0" y2="728.4607085644903" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+<circle cx="903.0" cy="907.9677419354839" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1022.8" cy="839.8444241199549" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1142.6" cy="781.799172003554" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1262.4" cy="735.8590745504528" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1382.2" cy="691.0322580645161" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<circle cx="1502.0" cy="728.4607085644903" r="5" fill="#0f766e" stroke="#ffffff" stroke-width="2"/>
+<text x="70" y="1092" font-size="13" fill="#475569">10-run averages. Java 17. Recursive Fibonacci and recursive Factorial both fail by 50k because of stack depth, while Binary Search and Fast Exponentiation remain stable through 100k.</text>
+</svg>
