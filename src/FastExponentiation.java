@@ -9,8 +9,7 @@ public class FastExponentiation {
 		Scanner scan = new Scanner(System.in);
 		BigInteger x = BigInteger.valueOf(2);
 		System.out.println("The base vaue is: " + x);
-	//		System.out.print("Enter the value of the exponent: ");
-	//		long n = scan.nextLong();
+
 		System.out.print("Enter the number of test runs: ");
 		long numRuns = scan.nextLong();
 		scan.close();
