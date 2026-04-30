@@ -291,6 +291,138 @@ def ratio_label(ratio: float) -> str:
     return f"{(1 / ratio):.2f}x faster"
 
 
+def file_slug(text: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", text.lower()).strip("_")
+
+
+def make_individual_algorithm_svg(rows: list[dict], algorithm_label: str) -> Path:
+    width = 1500
+    height = 900
+    panel_x = 70
+    panel_y = 88
+    panel_width = width - 140
+    panel_height = height - 152
+    plot_margin_left = 108
+    plot_margin_right = 34
+    plot_margin_top = 112
+    plot_margin_bottom = 90
+    plot_x = panel_x + plot_margin_left
+    plot_y = panel_y + plot_margin_top
+    plot_width = panel_width - plot_margin_left - plot_margin_right
+    plot_height = panel_height - plot_margin_top - plot_margin_bottom
+
+    algorithm_rows = rows_for_algorithm(rows, algorithm_label)
+    positive_values = [row["avg_time_ns"] for row in algorithm_rows if row["avg_time_ns"] > 0]
+    if not positive_values:
+        raise ValueError(f"No positive benchmark values found for {algorithm_label}")
+
+    overflow_at = first_overflow_size(rows, algorithm_label)
+    compared_size, ratio = largest_shared_comparison(rows, algorithm_label)
+
+    min_log = min(safe_log10(value) for value in positive_values)
+    max_log = max(safe_log10(value) for value in positive_values)
+    if math.isclose(min_log, max_log):
+        min_log -= 0.5
+        max_log += 0.5
+    else:
+        padding = (max_log - min_log) * 0.12
+        min_log -= padding
+        max_log += padding
+
+    def x_pos(input_size: int) -> float:
+        idx = INPUT_SIZES.index(input_size)
+        if len(INPUT_SIZES) == 1:
+            return plot_x + plot_width / 2
+        return plot_x + idx * plot_width / (len(INPUT_SIZES) - 1)
+
+    def y_pos(value: int) -> float:
+        normalized = (safe_log10(value) - min_log) / (max_log - min_log)
+        return plot_y + plot_height - normalized * plot_height
+
+    pieces = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">',
+        '<rect width="100%" height="100%" fill="#f8fafc"/>',
+        f'<rect x="{panel_x}" y="{panel_y}" width="{panel_width}" height="{panel_height}" rx="30" fill="#ffffff" stroke="#dbe4ee" stroke-width="1.5"/>',
+        f'<text x="{panel_x + 26}" y="{panel_y + 40}" font-size="34" font-weight="700" fill="#0f172a">{html.escape(algorithm_label)}</text>',
+        badge(panel_x + 26, panel_y + 58, "Recursive", COLORS["Recursive"]),
+        badge(panel_x + 154, panel_y + 58, "Iterative", COLORS["Iterative"]),
+    ]
+
+    if overflow_at is not None:
+        pieces.append(badge(panel_x + 282, panel_y + 58, f"Recursive overflow at {input_label(overflow_at)}", "#fff7ed", text_fill="#9a3412", stroke="#fdba74"))
+    else:
+        pieces.append(badge(panel_x + 282, panel_y + 58, f"Recursive safe through {input_label(INPUT_SIZES[-1])}", "#ecfdf5", text_fill="#065f46", stroke="#86efac"))
+
+    if ratio is not None and compared_size is not None:
+        pieces.append(
+            f'<text x="{panel_x + panel_width - 26}" y="{panel_y + 77}" text-anchor="end" font-size="18" fill="#475569">'
+            f'At {input_label(compared_size)}: recursion is {html.escape(ratio_label(ratio))}</text>'
+        )
+
+    tick_min = math.floor(min_log)
+    tick_max = math.ceil(max_log)
+    for exponent in range(tick_min, tick_max + 1):
+        tick_value = 10 ** exponent
+        if exponent < -1:
+            continue
+        y = y_pos(tick_value)
+        pieces.append(f'<line x1="{plot_x}" y1="{y}" x2="{plot_x + plot_width}" y2="{y}" stroke="#e2e8f0" stroke-width="1.2"/>')
+        pieces.append(f'<text x="{plot_x - 16}" y="{y + 5}" text-anchor="end" font-size="16" fill="#64748b">{value_label(tick_value)}</text>')
+
+    for size in INPUT_SIZES:
+        x = x_pos(size)
+        pieces.append(f'<line x1="{x}" y1="{plot_y}" x2="{x}" y2="{plot_y + plot_height}" stroke="#f1f5f9" stroke-width="1"/>')
+        pieces.append(f'<text x="{x}" y="{plot_y + plot_height + 34}" text-anchor="middle" font-size="16" fill="#64748b">{input_label(size)}</text>')
+
+    pieces.append(f'<line x1="{plot_x}" y1="{plot_y + plot_height}" x2="{plot_x + plot_width}" y2="{plot_y + plot_height}" stroke="#334155" stroke-width="2"/>')
+    pieces.append(f'<line x1="{plot_x}" y1="{plot_y}" x2="{plot_x}" y2="{plot_y + plot_height}" stroke="#334155" stroke-width="2"/>')
+
+    if overflow_at is not None:
+        overflow_x = x_pos(overflow_at)
+        pieces.append(
+            f'<line x1="{overflow_x}" y1="{plot_y}" x2="{overflow_x}" y2="{plot_y + plot_height}" '
+            f'stroke="#fb923c" stroke-width="2.5" stroke-dasharray="8 8" opacity="0.95"/>'
+        )
+        pieces.append(
+            f'<text x="{overflow_x + 12}" y="{plot_y + 24}" font-size="16" font-weight="700" fill="#9a3412">'
+            f'Overflow starts at {input_label(overflow_at)}</text>'
+        )
+
+    pieces.append(f'<text x="{plot_x + plot_width / 2}" y="{plot_y + plot_height + 68}" text-anchor="middle" font-size="18" fill="#334155">Input Size</text>')
+    pieces.append(
+        f'<text x="{plot_x - 78}" y="{plot_y + plot_height / 2}" text-anchor="middle" font-size="18" fill="#334155" '
+        f'transform="rotate(-90 {plot_x - 78} {plot_y + plot_height / 2})">Average Runtime (ns, log scale)</text>'
+    )
+
+    for method in METHODS:
+        method_rows = [row for row in algorithm_rows if row["method"] == method]
+        ok_rows = [row for row in method_rows if row["avg_time_ns"] > 0]
+        color = COLORS[method]
+        points = [(x_pos(row["input_size"]), y_pos(row["avg_time_ns"])) for row in ok_rows]
+
+        for start, end in pairwise(points):
+            pieces.append(
+                f'<line x1="{start[0]}" y1="{start[1]}" x2="{end[0]}" y2="{end[1]}" '
+                f'stroke="{color}" stroke-width="5" stroke-linecap="round"/>'
+            )
+
+        for point_x, point_y in points:
+            pieces.append(f'<circle cx="{point_x}" cy="{point_y}" r="7" fill="{color}" stroke="#ffffff" stroke-width="2.5"/>')
+
+        if method == "Recursive":
+            overflow_rows = [row for row in method_rows if row["avg_time_ns"] < 0]
+            for overflow_row in overflow_rows:
+                pieces.append(draw_overflow_x(x_pos(overflow_row["input_size"]), plot_y + 36, "#c2410c", size=11))
+
+    pieces.append("</svg>")
+    filename = f"poster_{file_slug(algorithm_label)}.svg"
+    return write_svg(CHART_DIR / filename, "\n".join(pieces))
+
+
+def generate_individual_algorithm_charts(rows: list[dict]) -> list[Path]:
+    return [make_individual_algorithm_svg(rows, algorithm_label) for _, algorithm_label in ALGORITHMS]
+
+
 def make_poster_runtime_svg(rows: list[dict]) -> Path:
     width = 1600
     height = 1120
